@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+	--font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+	--font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+	--color-base: #0a0a0f;
+	--color-surface: #12121a;
+	--color-surface-2: #1a1a24;
+	--color-line: #262635;
+	--color-accent: #8b5cf6;
+	--color-accent-soft: #a78bfa;
+	--color-muted: #9b9bad;
+
+	/* Technology brand colors */
+	--color-php-blue: #777bb4;
+	--color-php-dark: #4f5b93;
+	--color-phil-white: #ffffff;
+
+	--color-laravel-red: #ff2d20;
+	--color-laravel-dark: #b71e19;
+
+	--color-vue-green: #42b883;
+	--color-vue-dark: #35495e;
+
+	--color-tailwind-cyan: #38bdf8;
+	--color-tailwind-dark: #0f172a;
+
+	--color-js-yellow: #f7df1e;
+	--color-js-dark: #323330;
+
+	--color-angular-red: #dd0031;
+	--color-angular-dark: #c3002f;
+
+	--color-node-green: #339933;
+	--color-node-dark: #1a5c1a;
+
+	--color-jquery-blue: #0769ad;
+	--color-jquery-dark: #044e7a;
+
+	--color-mysql-blue: #4479a1;
+	--color-mysql-dark: #2d5a7b;
+
+	--color-mongodb-green: #47a248;
+	--color-mongodb-dark: #2d6a2e;
+
+	--color-csharp-purple: #68217a;
+	--color-csharp-dark: #4a1659;
+
+	--color-net-purple: #512bd4;
+	--color-net-dark: #3b1fa3;
+
+	--color-sql-red: #cc2927;
+	--color-sql-dark: #991f1d;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 5rem;
+}
+
+body {
+	background-color: var(--color-base);
+	color: #e7e7ee;
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+}
+
+::selection {
+	background-color: var(--color-accent);
+	color: #fff;
+}
+
+.gradient-text {
+	background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #34d399 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}

@@ -1,0 +1,109 @@
+---
+interface Job {
+	role: string;
+	company: string;
+	period: string;
+	current?: boolean;
+	points: string[];
+}
+
+const jobs: Job[] = [
+	{
+		role: "Desarrollador Full Stack",
+		company: "Don Web",
+		period: "Abr 2025  Actualidad",
+		current: true,
+		points: [],
+	},
+	{
+		role: "Desarrollador Full Stack",
+		company: "Hotel Manager",
+		period: "Abr 2022  Mar 2025",
+		points: [],
+	},
+	{
+		role: "Desarrollador Full Stack",
+		company: "REBrit S.R.L.",
+		period: "May 2021  Abr 2022",
+		points: [],
+	},
+	{
+		role: "Desarrollador Freelancer PHP",
+		company: "Freelance",
+		period: "Mar 2019",
+		points: [],
+	},
+	{
+		role: "Programador Junior",
+		company: "ITSynch S.R.L.",
+		period: "Abr 2016  Dic 2016",
+		points: [],
+	},
+	{
+		role: "Programador Junior",
+		company: "Galbop S.R.L.",
+		period: "Ago 2015  Mar 2016",
+		points: [],
+	},
+	{
+		role: "Programador Junior",
+		company: "Pirámide Technologies",
+		period: "Ene 2014  Jul 2015",
+		points: [],
+	},
+];
+---
+
+<section id="experiencia" class="relative">
+	<div class="mx-auto max-w-5xl px-5 py-20 md:py-28">
+		<div class="mb-12">
+			<p
+				class="mb-3 inline-block rounded-full border border-line bg-surface px-3.5 py-1 text-xs font-medium tracking-wide text-accent-soft uppercase"
+			>
+				Trayectoria
+			</p>
+			<h2 class="font-display text-3xl font-bold tracking-tight md:text-4xl">
+				<span class="gradient-text">Experiencia profesional</span>
+			</h2>
+		</div>
+
+		<div class="relative space-y-10">
+			<span
+				class="absolute top-2 bottom-2 left-[5px] w-px bg-line md:left-[89px]"
+				aria-hidden="true"
+			></span>
+
+			{jobs.map((job) => (
+				<article class="relative flex flex-col gap-2 pl-8 md:flex-row md:gap-0 md:pl-0">
+					<span
+						class={`absolute top-2 left-0 h-2.5 w-2.5 rounded-full md:left-[86px] ${
+							job.current
+								? "bg-emerald-400 shadow-[0_0_12px_0_rgba(52,211,153,0.7)]"
+								: "bg-accent"
+						}`}
+						aria-hidden="true"
+					></span>
+
+					<div class="md:w-[90px] md:pt-0.5 md:pr-6 md:text-right">
+						<p class="text-sm leading-snug text-muted">{job.period}</p>
+					</div>
+
+					<div class="md:flex-1 md:pl-8">
+						<h3 class="font-display text-lg font-semibold">
+							{job.role}
+							<span class="font-normal text-accent-soft"> · {job.company}</span>
+						</h3>
+						<ul class="mt-2 space-y-1.5">
+							{job.points.map((point) => (
+								<li class="flex gap-2 text-sm leading-relaxed text-muted">
+									<span class="mt-2 text-accent" aria-hidden="true">•</span>
+									<span>{point}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

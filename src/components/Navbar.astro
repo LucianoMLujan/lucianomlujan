@@ -1,0 +1,112 @@
+---
+const links = [
+	{ label: "Inicio", href: "#inicio" },
+	{ label: "Experiencia", href: "#experiencia" },
+	{ label: "Habilidades", href: "#habilidades" },
+	{ label: "Educación", href: "#educacion" },
+	{ label: "Contacto", href: "#contacto" },
+];
+---
+
+<header
+	class="fixed inset-x-0 top-0 z-50 border-b border-line bg-base/80 backdrop-blur-md"
+>
+	<nav
+		class="mx-auto flex h-16 max-w-5xl items-center justify-between px-5"
+	>
+		<a href="#inicio" class="font-display text-lg font-bold tracking-tight">
+			<span class="gradient-text">Luciano Luján</span>
+		</a>
+
+		<ul class="hidden items-center gap-7 md:flex">
+			{links.map((link) => (
+				<li>
+					<a
+						href={link.href}
+						class="text-sm text-muted transition-colors hover:text-white"
+					>
+						{link.label}
+					</a>
+				</li>
+			))}
+		</ul>
+
+		<div class="hidden items-center gap-2 md:flex">
+			<a
+				href="https://github.com/LucianoMLujan"
+				target="_blank"
+				rel="noopener"
+				aria-label="GitHub"
+				class="rounded-lg p-2 text-muted transition-colors hover:bg-surface-2 hover:text-white"
+			>
+				<svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+					<path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.38 2.89-.39.98 0 1.97.13 2.89.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.27 5.68.42.36.79 1.07.79 2.16v3.2c0 .3.21.67.8.55A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12.5.5Z" />
+				</svg>
+			</a>
+			<a
+				href="https://www.linkedin.com/in/luciano-lujan-b246326a/"
+				target="_blank"
+				rel="noopener"
+				aria-label="LinkedIn"
+				class="rounded-lg p-2 text-muted transition-colors hover:bg-surface-2 hover:text-white"
+			>
+				<svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+					<path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.55V9h3.57v11.45Z" />
+				</svg>
+			</a>
+		</div>
+
+		<input type="checkbox" id="menu-toggle" class="peer hidden" />
+		<label
+			for="menu-toggle"
+			class="flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 md:hidden"
+			aria-label="Abrir menú"
+		>
+			<span class="h-0.5 w-5 bg-white transition-transform peer-checked:translate-y-2 peer-checked:rotate-45"></span>
+			<span class="h-0.5 w-5 bg-white transition-opacity peer-checked:opacity-0"></span>
+			<span class="h-0.5 w-5 bg-white transition-transform peer-checked:-translate-y-2 peer-checked:-rotate-45"></span>
+		</label>
+		<div
+			class="absolute left-0 right-0 top-16 hidden border-b border-line bg-base/95 backdrop-blur-md peer-checked:block md:peer-checked:hidden"
+		>
+			<ul class="mx-auto flex max-w-5xl flex-col px-5 py-4">
+				{links.map((link) => (
+					<li>
+						<a
+							href={link.href}
+							class="block border-b border-line/60 py-3 text-sm text-muted transition-colors hover:text-white"
+						>
+							{link.label}
+						</a>
+					</li>
+				))}
+				<li>
+					<div class="flex items-center gap-2 py-3">
+						<a
+							href="https://github.com/LucianoMLujan"
+							target="_blank"
+							rel="noopener"
+							aria-label="GitHub"
+							class="rounded-lg p-2 text-muted transition-colors hover:bg-surface-2 hover:text-white"
+						>
+							<svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+								<path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.38 2.89-.39.98 0 1.97.13 2.89.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.27 5.68.42.36.79 1.07.79 2.16v3.2c0 .3.21.67.8.55A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12.5.5Z" />
+							</svg>
+						</a>
+						<a
+							href="https://www.linkedin.com/in/luciano-lujan-b246326a/"
+							target="_blank"
+							rel="noopener"
+							aria-label="LinkedIn"
+							class="rounded-lg p-2 text-muted transition-colors hover:bg-surface-2 hover:text-white"
+						>
+							<svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+								<path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.55V9h3.57v11.45Z" />
+							</svg>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>
